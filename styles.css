@@ -28,6 +28,7 @@
   --font: #171717;
   --sec-font: #404040;
   --green: #86EFAC;
+  --red: #F87171;
   --placeholder: #A3A3A3;
 }
 
@@ -58,6 +59,7 @@ header {
 
   svg {
     width: 2rem;
+    cursor: pointer;
   }
 
   div {
@@ -156,4 +158,51 @@ table {
     padding: 15px 10px;
     text-align: left;
   }
+
+  tr>th:last-child,
+  tr>td:last-child {
+    padding-right: 0;
+  }
+}
+
+button.status {
+  height: 1.75rem;
+  width: 5rem;
+  border-radius: 4px;
+  border: 0;
+  font-size: 1rem;
+  font-family: Rubik;
+  background: var(--sec-bg);
+  color: var(--font);
+  outline: 2px solid var(--sec-font);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button.status:hover {
+  outline: 3px solid var(--sec-font);
+  cursor: pointer;
+}
+
+button.status:active {
+  background: var(--sec-font);
+  color: var(--sec-bg);
+}
+
+.delete-btn {
+  width: 2rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: url("./assets/delete.svg");
+}
+
+.delete-btn:hover {
+  outline: 3px solid var(--red);
+  cursor: pointer;
+}
+
+.delete-btn:active {
+  outline: 3px solid var(--sec-font);
 }
