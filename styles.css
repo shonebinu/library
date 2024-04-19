@@ -1,0 +1,159 @@
+@font-face {
+  font-family: 'Rubik';
+  src: url('./fonts/rubik-regular-webfont.woff2') format('woff2'),
+    url('./fonts/rubik-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('./fonts/rubik-medium-webfont.woff2') format('woff2'),
+    url('./fonts/rubik-medium-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('./fonts/rubik-bold-webfont.woff2') format('woff2'),
+    url('./fonts/rubik-bold-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  --bg: #E5E5E5;
+  --sec-bg: #FAFAFA;
+  --font: #171717;
+  --sec-font: #404040;
+  --green: #86EFAC;
+  --placeholder: #A3A3A3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: var(--bg);
+  color: var(--font);
+  font-family: Rubik, sans-serif;
+  fill: var(--font);
+
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background: var(--sec-bg);
+  padding: 1.5rem 0;
+
+  svg {
+    width: 2rem;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+  }
+}
+
+main {
+  justify-self: center;
+  padding-top: 3rem;
+}
+
+form {
+  display: flex;
+  gap: 3rem;
+}
+
+input {
+  border-radius: 5px;
+  height: 1.8rem;
+  background: var(--bg);
+  border: 2.5px solid var(--sec-font);
+  font-family: Rubik, sans-serif;
+  font-size: 1rem;
+  color: var(--font);
+  padding-left: 5px;
+}
+
+input:focus {
+  border: 2.5px solid var(--font);
+  outline: none;
+}
+
+input::placeholder {
+  color: var(--placeholder);
+}
+
+select {
+  width: 100%;
+  font-size: 1rem;
+  padding: 3px 5px;
+  border-radius: 3px;
+  background: var(--bg);
+  color: var(--font);
+  border: 2.5px solid var(--sec-font);
+}
+
+select:focus {
+  outline: none;
+  border: 2.5px solid var(--sec-font);
+}
+
+select option {
+  background: var(--sec-bg);
+  color: var(--sec-font);
+}
+
+button.add-book {
+  height: 2.5rem;
+  align-self: end;
+  padding: 8px 25px;
+  border-radius: 7px;
+  border: 0;
+  font-size: 1rem;
+  font-family: Rubik;
+  background: var(--green);
+  color: var(--font);
+}
+
+button.add-book:hover {
+  outline: 3px solid var(--sec-font);
+  cursor: pointer;
+}
+
+button.add-book:active {
+  background: var(--sec-font);
+  color: var(--sec-bg);
+}
+
+table {
+  margin-top: 5rem;
+  width: 100%;
+
+  border-collapse: collapse;
+  font-size: 1.1rem;
+
+  th {
+    font-weight: 500;
+  }
+
+  th,
+  td {
+    border-bottom: 1px solid var(--sec-font);
+    padding: 15px 10px;
+    text-align: left;
+  }
+}
