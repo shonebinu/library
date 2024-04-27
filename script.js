@@ -2,15 +2,17 @@ const myLibrary = [];
 const table = document.querySelector("tbody");
 const addBookButton = document.querySelector(".add-book");
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-}
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
 
-Book.prototype.toggleReadStatus = function() {
-  this.read = !this.read;
+  toggleReadStatus() {
+    this.read = !this.read;
+  }
 }
 
 function addBookToLibrary(title, author, pages, read) {
@@ -49,7 +51,7 @@ function createDeleteButton() {
 }
 
 function displayBook(book, index) {
-  const tr = document.createElement("tr"); 
+  const tr = document.createElement("tr");
   const tds = [];
 
   tr.setAttribute("data-index", index);
@@ -62,7 +64,7 @@ function displayBook(book, index) {
   tds[2].textContent = book.pages;
 
   tds[3].appendChild(createStatusButton(book));
-  tds[4].appendChild(createDeleteButton());  
+  tds[4].appendChild(createDeleteButton());
 
   tds.forEach(td => tr.appendChild(td));
   table.appendChild(tr);
@@ -87,8 +89,6 @@ addBookButton.addEventListener("click", (e) => {
   addBookToLibrary(title, author, pages, read);
   displayBook(myLibrary.at(-1));
 });
-
-
 
 // sample filler data
 addBookToLibrary("Lord of the Rings", "J.R.R. Tolkein", 1147, true);
